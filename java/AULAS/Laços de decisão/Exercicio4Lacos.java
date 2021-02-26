@@ -10,10 +10,10 @@ public class Exercicio4Lacos {
 		numero = ler.nextInt();
 		
 		if (numero % 2 ==0) {
-			System.out.println("Esse numero é par.");
+			System.out.println("Esse numero é par. E sua raiz quadrada é: " + Math.sqrt(numero));
 		}
 		else {
-			System.out.println("Esse número é ímpar.");
+			System.out.println("Esse número é ímpar. Seu quadrado é: " + Math.pow(numero, 2));
 		}
 
 	}
