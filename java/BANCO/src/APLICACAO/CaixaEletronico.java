@@ -132,15 +132,22 @@ public class CaixaEletronico
 					operacoes++;
 				}while(operacoes<10 && opcao=='S');
 				
+				System.out.printf("VOCÊ TEM %d TALÕES", conta2.getContadorTalao());
 				do 
 				{
-					System.out.println("\nDeseja solicitar um talão?");
+					System.out.println("\nDESEJA SOLICITAR UM TALÃO? [S] SIM , [N] NÃO:");
 		            resposta = scan.next().toUpperCase().charAt(0);
-					conta2.pediTalao();
+					
+		            if (resposta == 'S')
+		            {
+						conta2.pediTalao();
+						
+					}
+					
 					
 					if(conta2.getContadorTalao()==0)
 					{
-						System.out.print("\nVocê não tem mais talões!"); 
+						System.out.print("\nVOCÊ NÃO TEM MAIS TALÕES!"); 
 					}
 					
 				}while(conta2.getContadorTalao()>0 && resposta=='S');
