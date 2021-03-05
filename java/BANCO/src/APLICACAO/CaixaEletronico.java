@@ -22,7 +22,8 @@ public class CaixaEletronico
 		
 		//criei o objeto conta1
 		ContaPoupanca conta1 = new ContaPoupanca(1,"1",25);
-		ContaCorrente conta2 = new ContaCorrente(2,"2", true, 0); //ALTERAÇÃO MINHA
+		ContaCorrente conta2 = new ContaCorrente(2,"2", true, 3); //ALTE2
+		
 		
 		//Textos so pra deixar bonito
 		System.out.print("|BANCO BANCO|");
@@ -131,14 +132,18 @@ public class CaixaEletronico
 					operacoes++;
 				}while(operacoes<10 && opcao=='S');
 				
-				do {
-					System.out.println("Deseja solicitar um cheque?");
+				do 
+				{
+					System.out.println("\nDeseja solicitar um talão?");
 		            resposta = scan.next().toUpperCase().charAt(0);
-					conta2.contadorTalao(resposta);
+					conta2.pediTalao();
 					
-					operacoes ++;
-				}
-				while (operacoes <= 3 && resposta == 's');
+					if(conta2.getContadorTalao()==0)
+					{
+						System.out.print("\nVocê não tem mais talões!"); 
+					}
+					
+				}while(conta2.getContadorTalao()>0 && resposta=='S');
 				
 				break;
 			}	
