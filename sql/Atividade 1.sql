@@ -1,1 +1,0 @@
-SELECT * FROM tb_funcionarios WHERE id = 3;
